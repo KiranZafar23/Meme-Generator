@@ -2,9 +2,9 @@ import React from "react"
 
 export default function Meme() {
     const [meme, setMeme] = React.useState({
-        topText: "",
-        bottomText: "",
-        randomImage: "https://i.imgflip.com/261o3j.jpg" 
+        top_text: "",
+        bottom_text: "",
+        random_image: "https://i.imgflip.com/261o3j.jpg" 
     })
     
     const [allMemes, setAllMemes] = React.useState([])
@@ -20,7 +20,7 @@ export default function Meme() {
         const url = allMemes[randomNumber].url
         setMeme(prevMeme => ({
             ...prevMeme,
-            randomImage: url
+            random_image: url
         }))
         
     }
@@ -40,16 +40,16 @@ export default function Meme() {
                     type="text"
                     placeholder="Top text"
                     className="form-input"
-                    name="topText"
-                    value={meme.topText}
+                    name="top_text"
+                    value={meme.top_text}
                     onChange={handleChange}
                 />
                 <input 
                     type="text"
                     placeholder="Bottom text"
                     className="form-input"
-                    name="bottomText"
-                    value={meme.bottomText}
+                    name="bottom_text"
+                    value={meme.bottom_text}
                     onChange={handleChange}
                 />
                 <button 
@@ -60,9 +60,9 @@ export default function Meme() {
                 </button>
             </div>
             <div className="meme">
-                <img src={meme.randomImage} className="meme-image" />
-                <h2 className="meme-text top">{meme.topText}</h2>
-                <h2 className="meme-text bottom">{meme.bottomText}</h2>
+                <img src={meme.random_image} className="meme-image" />
+                <h2 className="meme-text top">{meme.top_text}</h2>
+                <h2 className="meme-text bottom">{meme.bottom_text}</h2>
             </div>
         </main>
     )
